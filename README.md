@@ -110,45 +110,37 @@ make re        # Rebuild everything
 
 #### Virtual Machines vs Docker
 
-Virtual Machines
-Virtual machines run a full operating system on top of a hypervisor.
+- Virtual machines run a full operating system on top of a hypervisor.
 They use more resources and take longer to start but provide strong isolation.
 
-Docker
-Docker uses containerization at the OS level and shares the host kernel.
+- Docker uses containerization at the OS level and shares the host kernel.
 Containers are lightweight start fast and use resources more efficiently.
 This makes Docker a better choice for running multiple services.
 
 #### Secrets vs Environment Variables
 
-Environment Variables
-Environment variables are stored in a .env file and passed to containers at runtime.
+- Environment variables are stored in a .env file and passed to containers at runtime.
 They are fine for general configuration but not ideal for sensitive data.
 
-Docker Secrets
-Docker secrets are designed for sensitive information like passwords and keys.
-They are not stored in images and are mounted securely inside the container.
-This makes them safer for production usage.
+- Docker secrets are designed for sensitive information like passwords and keys.  
+They are not stored in images and are mounted securely inside the container.  
+While they were not used in this project they are the preferred solution for production environments.
 
 #### Docker Network vs Host Network
 
-Docker Network
-Docker networks isolate containers and allow them to communicate using service names.
+- Docker networks isolate containers and allow them to communicate using service names.
 They provide better security and controlled access between services.
 
-Host Network
-With host networking containers share the host network directly.
+- With host networking containers share the host network directly.
 This removes isolation and is less secure which is why it is forbidden in this project.
 
 #### Docker Volumes vs Bind Mounts
 
-Docker Volumes
-Docker volumes are managed by Docker and are independent from the host filesystem structure.
+- Docker Volumes are managed by Docker and are independent from the host filesystem structure.
 They are more reliable for data persistence and easier to manage.
 
-Bind Mounts
-Bind mounts map a host directory directly into a container.
+- Bind mounts map a host directory directly into a container.
 They are useful during development but less portable.
 
-This project uses Docker volumes to persist WordPress and MariaDB data in
-/home/moait-la/data.
+- This project uses Docker volumes to persist WordPress and MariaDB data in
+/home/moait-la/data
