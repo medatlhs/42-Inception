@@ -28,9 +28,54 @@ The stack is composed of the following services:
 - Database data is persisted using a Docker volume
 - All containers communicate through a custom Docker network and are configured to restart automatically in case of failure.
 
-#### Starting and Stopping the Project
 
-All interactions with the project are done exclusively through the Makefile.
+## Instructions
+
+### Prerequisites
+
+- Linux virtual machine
+- Docker
+- Docker Compose
+- Make
+
+### Setup
+
+1. Clone the repository :
+   ```bash
+   git clone repository_url
+   cd inception
+2. Configure .env inside /srcs :<br>
+  The project is configured using a `.env` file located in `srcs/`.
+  Values are **not included** for security reasons.
+```env
+  # MariaDB
+  WP_DB_NAME=
+  WP_DB_USER_NAME=
+  WP_DB_PASSWORD=
+  WP_DB_HOST=
+
+  # WordPress
+  WP_URL=
+  WP_TITLE=
+
+  # WordPress admin
+  WP_ADMIN=
+  WP_ADMIN_PASS=
+  WP_ADMIN_EMAIL=
+
+  # WordPress user
+  WP_USR=
+  WP_USR_EMAIL=
+  WP_USR_ROLE=
+  WP_USR_PASS=
+```
+4. Configure local DNS :
+   ```bash
+   sudo vim /etc/hosts
+   127.0.0.1 maoit-la.42.fr
+
+### Starting and Stopping the Project
+All interactions with the project are done with the Makefile.
 ##### Start the infrastructure
 From the root of the repository do
 ```bash
@@ -67,83 +112,32 @@ https://moait-la.42.fr/wp-admin
 
 Use the administrator credentials defined during the initial setup.
 
-4. Credentials Management
-Environment variables
-
-Non-sensitive configuration values are stored in:
-
-srcs/.env
-
-
-This file contains values such as:
-
-Domain name
-
-Database name
-
-Database user
-
-Secrets
-
-Sensitive information is never stored in Dockerfiles or committed to Git.
-
-Passwords and credentials are stored as Docker secrets in the secrets/ directory:
-
-secrets/
-├── credentials.txt
-├── db_password.txt
-└── db_root_password.txt
-
-
-These files are:
-
-Loaded securely into the containers
-
-Ignored by Git
-
-Used during container initialization
-
-To update credentials, modify the corresponding secret file and restart the project.
-
-5. Checking That Services Are Running
-Check container status
+##### Checking That Services Are Running
+###### Check container status
+```
 make ps
+```
+All services should appear as up for sometime.
 
-
-All services should appear as running.
-
-View logs
-
+##### View logs
 To inspect logs for all services:
-
+```bash
 make logs
+```
+this helps verify correct startup or errors.
 
-
-This helps verify correct startup or diagnose errors.
-
-6. Data Persistence
-
+Data Persistence
 Project data is stored on the host machine at:
+```bash
+/home/moait-la/data/
+```
+wordPress files persist even if containers are rebuilt
+Database data remains when containers are stopped or restarted
 
-/home/<login>/data/
-
-
-WordPress files persist even if containers are rebuilt
-
-Database data remains intact when containers are stopped or restarted
-
-7. Expected Behavior
-
+#### Expected Behavior
 When the project is working correctly:
-
-Only NGINX is exposed to the outside (port 443)
-
-WordPress and MariaDB are accessible only through the Docker network
-
-Containers restart automatically on failure
-
-No credentials are hardcoded in images or source files
-
-The website loads correctly over HTTPS
-
+- Only NGINX is exposed to the outside (port 443)
+- WordPress and MariaDB are accessible only through the Docker network
+- Containers restart automatically on failure
+- The website loads correctly over HTTPS
 If all these conditions are met, the infrastructure is considered functional and correctly configured.
