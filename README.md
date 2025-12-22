@@ -6,10 +6,10 @@
 
 **Inception** is a system administration and DevOps project that aims to introduce containerization using **Docker** and **Docker Compose**.
 
-The goal of the project is to build a small, secure, and isolated infrastructure composed of multiple services running in separate Docker containers, all orchestrated using Docker Compose and executed inside a virtual machine.
+The goal of the project is to build a small, secure, and isolated infrastructure composed of multiple services running in separate Docker containers, all orchestrated using Docker Compose and executed inside a virtual machine with Linux operation system setup on it.
 
 This infrastructure includes:
-- An **NGINX** web server secured with **TLSv1.2 / TLSv1.3**
+- An **NGINX** web server acting as a reverse proxy secured with **TLSv1.2 / TLSv1.3**
 - A **WordPress** application running with **PHP-FPM**
 - A **MariaDB** database
 - Persistent **Docker volumes** for database and website data
@@ -41,7 +41,6 @@ The infrastructure is composed of the following services:
 
 - **Docker Network**
   - Allows containers to communicate internally
-  - No use of `--link`, `links`, or `network: host`
 
 - **Docker Volumes**
   - One volume for WordPress database
@@ -54,7 +53,7 @@ The infrastructure is composed of the following services:
 
 ### Prerequisites
 
-- Linux virtual machine
+- Linux os
 - Docker
 - Docker Compose
 - Make
@@ -63,11 +62,11 @@ The infrastructure is composed of the following services:
 
 1. Clone the repository :
    ```bash
-   git clone repository_url
+   git clone [repo url]
    cd inception
 2. Configure .env inside /srcs :
   The project is configured using a `.env` file located in `srcs/`.
-  Values are **not included** for security reasons.
+  Values are **not included** for security.
 ```env
   # MariaDB
   WP_DB_NAME=
@@ -93,7 +92,7 @@ The infrastructure is composed of the following services:
 4. Configure local DNS :
    ```bash
    sudo vim /etc/hosts
-   127.0.0.1 maoit-la.42.fr
+   127.0.0.1 moait-la.42.fr
 
 ### Build And Run
 This project is fully managed using Makefile
@@ -150,7 +149,7 @@ Most of my resources were the official documentation for each service: Docker, W
 I also relied on online research, reading Medium articles and Reddit posts, which helped me understand confusing concepts and see how others solved similar problems.
 YouTube was another valuable resource, with many channels providing tutorials and explanations that guided me through understanding new concepts.
 
-AI Usage
+AI Usage <br>
 And of course there was AI too it was my helper throughout the project I use AI as an assistant not as a replacement I dont rely on it heavily and try my best to solve problems on my own most of the time I used it to understand confusing concepts or troubleshoot errors that were hard to figure out even when I used AI I always made sure I knew exactly what I was doing.
 
 
