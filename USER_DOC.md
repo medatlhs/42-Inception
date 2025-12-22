@@ -73,7 +73,7 @@ All containers communicate through a custom Docker network and are configured to
 4. Configure local DNS :
    ```bash
    sudo vim /etc/hosts
-   127.0.0.1 maoit-la.42.fr
+   127.0.0.1 moait-la.42.fr
 
 ### Starting and Stopping the Project
 All interactions with the project are done with the Makefile.
@@ -120,13 +120,6 @@ make ps
 ```
 All services should appear as up for sometime.
 
-##### View logs
-To inspect logs for all services:
-```bash
-make logs
-```
-this helps verify correct startup or errors.
-
 Data Persistence
 Project data is stored on the host machine at:
 ```bash
@@ -137,8 +130,8 @@ Database data remains when containers are stopped or restarted
 
 #### Expected Behavior
 When the project is working correctly:
-- Only NGINX is exposed to the outside (port 443)
-- WordPress and MariaDB are accessible only through the Docker network
+- Only NGINX is exposed to the outside on port 443
+- WordPress and MariaDB are accessible only through the Docker internal network
 - Containers restart automatically on failure
 - The website loads correctly over HTTPS
-If all these conditions are met, the infrastructure is considered functional and correctly configured.
+If all these conditions are met the infrastructure is considered functional and correctly configured
