@@ -26,7 +26,8 @@ The stack is composed of the following services:
 - Stores the WordPress database
 - Runs in its own container without any web server
 - Database data is persisted using a Docker volume
-- All containers communicate through a custom Docker network and are configured to restart automatically in case of failure.
+
+All containers communicate through a custom Docker network and are configured to restart automatically in case of failure.
 
 
 ## Instructions
@@ -42,7 +43,7 @@ The stack is composed of the following services:
 
 1. Clone the repository :
    ```bash
-   git clone repository_url
+   git clone [repo url]
    cd inception
 2. Configure .env inside /srcs :<br>
   The project is configured using a `.env` file located in `srcs/`.
