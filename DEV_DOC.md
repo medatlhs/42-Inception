@@ -52,7 +52,7 @@ Example: <br>
 127.0.0.1 moait-la.42.fr <br>
 #### 3.2 Environment variables
 
-non sensitive configuration values are stored in:
+sensitive configuration values are stored in:
 ```bash
 secs/.env
 ```
@@ -62,26 +62,6 @@ this file contains variables such as:
 - Database user
 
 This file must exist before launching the project.
-
-#### 3.3 Secrets configuration
-Sensitive information is stored as Docker secrets inside the secrets/ directory:
-
-```text
-secrets/
-├── credentials.txt
-├── db_password.txt
-└── db_root_password.txt
-```
-these files contain:
-
-- WordPress credentials
-- Database user password
-- Database root password
-
-They are:
-- Not committed to Git
-- Mounted securely into containers
-- Used during service initialization
 
 ### 4. Building and Launching the Project
 ```note
@@ -118,6 +98,7 @@ make ps     # Check container status
 make logs   # Inspect logs if needed
 make down   # Stop the project
 ```
+
 
 
 
