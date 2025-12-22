@@ -4,6 +4,11 @@ mkdir -p /var/www/html
 chmod -R 755 /var/www/html 
 cd /var/www/html
 
+if echo "${WP_ADMIN}" | grep -iq admin; then
+    echo "WP_ADMIN contains "admin" it should not!";
+	exit 1
+fi
+
 if [ ! -f "wp-config.php" ]; then
     wp core download --allow-root
 

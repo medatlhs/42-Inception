@@ -80,7 +80,7 @@ The infrastructure is composed of the following services:
   WP_TITLE=
 
   # WordPress admin
-  WP_ADMIN=
+  WP_ADMIN= 
   WP_ADMIN_PASS=
   WP_ADMIN_EMAIL=
 
