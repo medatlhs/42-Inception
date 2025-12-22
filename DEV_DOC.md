@@ -19,31 +19,20 @@ The repository is organized as follows
 ├── Makefile
 ├── USER_DOC.md
 ├── DEV_DOC.md
-├── secrets/
-│   ├── credentials.txt
-│   ├── db_password.txt
-│   └── db_root_password.txt
 └── srcs/
     ├── docker-compose.yml
     ├── .env
     └── requirements/
-        ├── bonus/
         ├── mariadb/
         │   ├── conf/
         │   ├── tools/
         │   ├── Dockerfile
-        │   └── .dockerignore
         ├── nginx/
         │   ├── conf/
-        │   ├── tools/
         │   ├── Dockerfile
-        │   └── .dockerignore
         ├── wordpress/
-        │   ├── conf/
         │   ├── tools/
         │   ├── Dockerfile
-        │   └── .dockerignore
-        └── tools/
 ```
 
 Each service has
@@ -129,5 +118,6 @@ make ps     # Check container status
 make logs   # Inspect logs if needed
 make down   # Stop the project
 ```
+
 
 
