@@ -144,3 +144,14 @@ They are useful during development but less portable.
 
 - This project uses Docker volumes to persist WordPress and MariaDB data in
 /home/moait-la/data
+
+### Resources
+Most of my resources were the official documentation for each service: Docker, WordPress with PHP-FPM, MariaDB, and NGINX.
+I also relied on online research, reading Medium articles and Reddit posts, which helped me understand confusing concepts and see how others solved similar problems.
+YouTube was another valuable resource, with many channels providing tutorials and explanations that guided me through understanding new concepts.
+
+AI Usage
+And of course there was AI too it was my helper throughout the project I use AI as an assistant not as a replacement I dont rely on it heavily and try my best to solve problems on my own most of the time I used it to understand confusing concepts or troubleshoot errors that were hard to figure out even when I used AI I always made sure I knew exactly what I was doing.
+
+
+
