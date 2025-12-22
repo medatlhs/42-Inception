@@ -116,7 +116,7 @@ Use the administrator credentials defined during the initial setup.
 ##### Checking That Services Are Running
 ###### Check container status
 ```
-make ps
+make status
 ```
 All services should appear as up for sometime.
 
