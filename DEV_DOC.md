@@ -53,7 +53,7 @@ Each service has
 
 ### 3. Environment Setup From Scratch
 #### 3.1 Domain configuration
-The domain name must point to the local machine’s IP address. <br>
+The domain name must point to the local machines IP address. <br>
 Add the following line to /etc/hosts: <br>
 
 <local_ip> <login>.42.fr <br>
@@ -103,7 +103,7 @@ This step is already mentioned in USER_DOC.md and REAME.md.
 
 Project data is persisted using Docker volumes located on the host machine at:
 ```bash
-/home/<login>/data/
+/home/moait-la/data/
 ```
 WordPress website files
 
@@ -129,3 +129,4 @@ make ps     # Check container status
 make logs   # Inspect logs if needed
 make down   # Stop the project
 ```
+
