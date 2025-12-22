@@ -96,7 +96,7 @@ They are:
 
 ### 4. Building and Launching the Project
 ```note
-This step is already mentioned in USER_DOC.md and REAME.md.
+This step is already mentioned in USER_DOC.md and REAME.md
 ```
 
 ### 5. Data Storage and Persistence
@@ -129,4 +129,5 @@ make ps     # Check container status
 make logs   # Inspect logs if needed
 make down   # Stop the project
 ```
+
 
