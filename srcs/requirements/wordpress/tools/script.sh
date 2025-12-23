@@ -5,7 +5,7 @@ chmod -R 755 /var/www/html
 cd /var/www/html
 
 if echo "${WP_ADMIN}" | grep -iq admin; then
-    echo "WP_ADMIN contains "admin" it should not!";
+    echo "WP_ADMIN can't contain 'admin' !";
 	exit 1
 fi
 

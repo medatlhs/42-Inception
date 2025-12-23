@@ -101,7 +101,7 @@ make
 make up        # Start containers
 make down      # Stop containers
 make clean     # Remove containers
-make fclean    # Remove containers, images, and volumes
+make fclean    # Remove containers and images and volumes
 make re        # Rebuild everything
 ```
 
